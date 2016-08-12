@@ -6,6 +6,8 @@
     <string name="action_settings">Settings</string>
     <string name="buttonName">查看全部应用</string>
     <string name="imageDec">listImage</string>
+    <string name="frame1">试卷习题</string>
+    <string name="frame2">知识点</string>
     <string-array name="data">
         <item >zhang san</item>
         <item >li si</item>

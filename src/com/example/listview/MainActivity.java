@@ -5,20 +5,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends Activity {
 	private String[] mListType = { "[姓名]", "[性别]", "[年龄]", "[居住地]", "[邮箱]" };
 	private String[] time = { "1小时前", "2小时前", "小时前", "昨天", "前天" };
 	private String[] mListTitle = { "雨松MOMO", "男", "25", "北京", "xuan@gmail.com" };
@@ -30,9 +27,10 @@ public class MainActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//	    setContentView(R.layout.activity_main);
-	    
-	    
+	    setContentView(R.layout.activity_main);
+	    //下划线
+//	    TextView textView = (TextView)findViewById(R.id.frame1);
+//	    textView.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
 		mListView = (ListView) findViewById(R.id.lv_test);
 		int lengh = mListTitle.length;
 		for (int i = 0; i < lengh; i++) {
@@ -44,7 +42,7 @@ public class MainActivity extends ListActivity {
 			item.put("time", time[i]);
 			mData.add(item);
 		}
-		SimpleAdapter adapter = new SimpleAdapter(this, mData, R.layout.activity_main,
+		SimpleAdapter adapter = new SimpleAdapter(this, mData, R.layout.list_item,
 				new String[] {"image","type","title", "text","time" },
 				new int[]{R.id.image,R.id.type,R.id.title,R.id.text,R.id.time});
 		mListView.setAdapter(adapter);
@@ -56,36 +54,8 @@ public class MainActivity extends ListActivity {
 						Toast.LENGTH_LONG).show();
 			}
 		});
-		setContentView(mListView);
 	}
 	
-	public class TestAdapter extends BaseAdapter {
-
-		@Override
-		public int getCount() {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-
-		@Override
-		public Object getItem(int position) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public long getItemId(int position) {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-		
-	}
 	public void onClick(View view) {
 //		ListView listView = (ListView)findViewById(R.id.list);
 //		String items = "Selected items:\n";
