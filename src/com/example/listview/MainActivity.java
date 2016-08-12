@@ -16,10 +16,10 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	private String[] mListType = { "[ĞÕÃû]", "[ĞÔ±ğ]", "[ÄêÁä]", "[¾Ó×¡µØ]", "[ÓÊÏä]" };
-	private String[] time = { "1Ğ¡Ê±Ç°", "2Ğ¡Ê±Ç°", "Ğ¡Ê±Ç°", "×òÌì", "Ç°Ìì" };
-	private String[] mListTitle = { "ÓêËÉMOMO", "ÄĞ", "25", "±±¾©", "xuan@gmail.com" };
-	private String[] mListStr = { "ÉÏ´Î²é¿´Ê±¼ä", "ÉÏ´Î²é¿´Ê±¼ä", "ÉÏ´Î²é¿´Ê±¼ä", "ÉÏ´Î²é¿´Ê±¼ä", "ÉÏ´Î²é¿´Ê±¼ä" };
+	private String[] mListType = { "[å§“å]", "[æ€§åˆ«]", "[å¹´é¾„]", "[å±…ä½åœ°]", "[é‚®ç®±]" };
+	private String[] time = { "1å°æ—¶å‰", "2å°æ—¶å‰", "å°æ—¶å‰", "æ˜¨å¤©", "å‰å¤©" };
+	private String[] mListTitle = { "é›¨æ¾MOMO", "ç”·", "25", "åŒ—äº¬", "xuan@gmail.com" };
+	private String[] mListStr = { "ä¸Šæ¬¡æŸ¥çœ‹æ—¶é—´", "ä¸Šæ¬¡æŸ¥çœ‹æ—¶é—´", "ä¸Šæ¬¡æŸ¥çœ‹æ—¶é—´", "ä¸Šæ¬¡æŸ¥çœ‹æ—¶é—´", "ä¸Šæ¬¡æŸ¥çœ‹æ—¶é—´" };
 	private int[] images = {  R.drawable.ic_login_qq,  R.drawable.ic_account,  R.drawable.ic_launcher,  R.drawable.ic_login_qq,  R.drawable.ic_login_99};
 	ListView mListView = null;
 	ArrayList<Map<String, Object>> mData = new ArrayList<Map<String, Object>>();
@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_main);
-	    //ÏÂ»®Ïß
+	    //ä¸‹åˆ’çº¿
 //	    TextView textView = (TextView)findViewById(R.id.frame1);
 //	    textView.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
 		mListView = (ListView) findViewById(R.id.lv_test);
@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
 		mListView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-				Toast.makeText(MainActivity.this, "ÄúÑ¡ÔñÁË±êÌâ£º" + mListTitle[position] + "ÄÚÈİ£º" + mListStr[position],
+				Toast.makeText(MainActivity.this, "æ‚¨é€‰æ‹©äº†æ ‡é¢˜ï¼š" + mListTitle[position] + "å†…å®¹ï¼š" + mListStr[position],
 						Toast.LENGTH_LONG).show();
 			}
 		});
